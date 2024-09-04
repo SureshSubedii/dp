@@ -8,8 +8,7 @@ var generate = function(numRows) {
 
     for(let i = 1; i < numRows; i ++){
         prev = result[ i - 1]
-        console.log(prev)
-        let newRow = new Array(i + 1)
+        let newRow = []
         newRow[0] = newRow[i] = 1
         for(let j = 1; j < i; j ++){
             newRow[j] = prev[j - 1] +  prev[j ]
@@ -17,5 +16,4 @@ var generate = function(numRows) {
         result.push(newRow)
     }
     return result
-    
 };
