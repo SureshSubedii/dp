@@ -15,3 +15,15 @@ var rob = function(nums) {
     
     return maxHaul(n - 1)
 };
+
+function rob(nums) {
+        let n = nums.length
+        let hauls = new Array(n).fill(0)
+        let getHaul = (x) => hauls[x] || 0
+
+        for(let i = 0; i < n; i ++){
+            hauls[i] = Math.max( nums[i] + getHaul(i -2), getHaul(i - 1))
+        }
+        return hauls[n - 1]
+
+}
