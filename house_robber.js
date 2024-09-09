@@ -27,3 +27,15 @@ function rob(nums) {
         return hauls[n - 1]
 
 }
+
+function rob(nums) {
+    let prev = 0
+    let curr = nums[0]
+    for(let i = 1; i < nums.length; i ++){
+     let temp = curr
+     curr = Math.max( nums[i] + prev, curr)
+     prev = temp
+    }
+    return curr
+
+}
